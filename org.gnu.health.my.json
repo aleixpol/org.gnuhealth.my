@@ -1,0 +1,48 @@
+{
+    "id": "org.kde.MyGNUHealth",
+    "branch": "master",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.15",
+    "sdk": "org.kde.Sdk",
+    "command": "MyGNUHealth",
+    "tags": ["nightly"],
+    "desktop-file-name-suffix": " (Nightly)",
+    "finish-args": [ "--share=ipc", "--socket=x11", "--socket=wayland", "--device=dri" ],
+
+    "modules": [
+        {
+            "name": "PySide2",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DBUILD_TESTS=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.qt.io/official_releases/QtForPython/pyside2/PySide2-5.15.1-src/pyside-setup-opensource-src-5.15.1.tar.xz",
+                    "sha256": "f175c1d8813257904cf0efeb58e44f68d53b9916f73adaf9ce19514c0271c3fa"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "mkdir -p /app/include/qt5tmp && cp -R /usr/include/Qt* /app/include/qt5tmp # https://bugreports.qt.io/broswse/PYSIDE-787",
+                        "sed -i 's|--include-paths=|--include-paths=/app/include/qt5tmp:|' sources/pyside2/cmake/Macros/PySideModules.cmake"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "MyGNUHealth",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "builddir": true,
+            "sources": [
+                { "type": "hg", "url": "https://hg.savannah.gnu.org/hgweb/health/MyGNUHealth" }
+            ]
+        }
+    ]
+}
