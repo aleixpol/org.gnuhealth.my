@@ -35,13 +35,17 @@
         },
         {
             "name": "MyGNUHealth",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "python3 setup.py build",
+                "python3 setup.py install --prefix=/app --root=/ --optimize=1"
             ],
-            "builddir": true,
             "sources": [
-                { "type": "hg", "url": "https://hg.savannah.gnu.org/hgweb/health/MyGNUHealth" }
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/source/M/MyGNUHealth/MyGNUHealth-0.7a6.tar.gz",
+                    "sha256": "f534798aa576484a413a2b88ab695d21f55130267a7be66eb243a47c2d85f87e"
+                }
             ]
         }
     ]
