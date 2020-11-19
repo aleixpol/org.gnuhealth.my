@@ -1,0 +1,56 @@
+{
+    "name": "bcrypt",
+    "buildsystem": "simple",
+    "ensure-writable" : [
+        "/lib/python*/site-packages/easy-install.pth"
+    ],
+    "build-commands": [
+        "python3 setup.py build",
+        "python3 setup.py install --prefix /app"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/source/b/bcrypt/bcrypt-3.2.0.tar.gz",
+            "sha256": "5b93c1726e50a93a033c36e5ca7fdcd29a5c7395af50a6892f5d9e7c6cfbfb29"
+        }
+    ],
+    "modules": [
+        {
+            "name": "pycparser",
+            "buildsystem": "simple",
+            "ensure-writable" : [
+                "/lib/python*/site-packages/easy-install.pth"
+            ],
+            "build-commands": [
+                "python3 setup.py build",
+                "python3 setup.py install --prefix /app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/source/p/pycparser/pycparser-2.20.tar.gz",
+                    "sha256": "2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"
+                }
+            ]
+        },
+        {
+            "name": "cffi",
+            "buildsystem": "simple",
+            "ensure-writable" : [
+                "/lib/python*/site-packages/easy-install.pth"
+            ],
+            "build-commands": [
+                "python3 setup.py build",
+                "python3 setup.py install --prefix /app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://files.pythonhosted.org/packages/source/c/cffi/cffi-1.14.3.tar.gz",
+                    "sha256": "f92f789e4f9241cd262ad7a555ca2c648a98178a953af117ef7fad46aa1d5591"
+                }
+            ]
+        }
+    ]
+}
