@@ -61,9 +61,9 @@
             ],
             "sources" : [
                 {
-                    "type" : "file",
-                    "url" : "https://pypi.python.org/packages/e4/b0/286e8a936158e5cc5791d5fa3bc4b1d5a7e1ff4e5b3f3766b63d8e97708a/requests-2.14.2-py2.py3-none-any.whl",
-                    "sha256" : "3b39cde35be51762885631cf586f4dc2284951b44d479a4454020758d767cc2f"
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/39/fc/f91eac5a39a65f75a7adb58eac7fa78871ea9872283fb9c44e6545998134/requests-2.25.0-py2.py3-none-any.whl",
+                    "sha256": "e786fa28d8c9154e6a4de5d46a1d921b8749f8b74e28bde23768e5e16eece998"
                 }
             ]
         },
