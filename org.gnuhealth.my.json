@@ -90,7 +90,7 @@
             ],
             "build-commands" : [
                 "python3 setup.py build",
-                "python3 setup.py install --prefix=/app"
+                "python3 setup.py install --prefix=/app --root=/"
             ],
             "sources": [
                 {
